@@ -15,5 +15,3 @@
 <img src='./public/img/samsungView.png'>
 
 > Samsung view
-
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
