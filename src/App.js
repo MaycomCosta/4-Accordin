@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import * as C from './styles.js'
+import data from './data/data'
+import SingleQuestion from './components/Question'
+
 
 function App() {
+  // eslint-disable-next-line
+  const [questions, setQuestions] = useState(data)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <C.Main>
+      <C.Container>
+        <h3>questions and answers about login</h3>
+        <C.SectionInfo>
+        {questions.map((question) => {
+            return (
+              <SingleQuestion key={question.id} {...question}></SingleQuestion>
+            )
+        })}
+        </C.SectionInfo>
+      </C.Container>
+    </C.Main>
+  )
 }
 
-export default App;
+export default App
